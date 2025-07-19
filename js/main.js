@@ -105,13 +105,13 @@
    // Back to top button
    $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
+        $('.back-to-top').fadeIn(300);
     } else {
-        $('.back-to-top').fadeOut('slow');
+        $('.back-to-top').fadeOut(300);
     }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({scrollTop: 0}, 800, 'easeInOutQuart');
         return false;
     });
 
