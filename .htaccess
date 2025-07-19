@@ -1,19 +1,17 @@
 RewriteEngine On
 
-# Remove .html extension from URLs
+# Remove trailing slashes from URLs
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Handle folder-based routing
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1/index.html [L]
 
-# Redirect .html URLs to clean URLs
+# Redirect old .html URLs to clean URLs
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1? [NC,L,R=301]
-
-# Handle specific pages
-RewriteRule ^$ index.html [L]
-RewriteRule ^about$ about.html [L]
-RewriteRule ^services$ services.html [L]
-RewriteRule ^contact$ contact.html [L]
+RewriteRule ^ /%1/? [NC,L,R=301]
 
 # Custom error page
 ErrorDocument 404 /404.html

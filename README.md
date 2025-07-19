@@ -4,85 +4,87 @@ Professional electrical services, consulting, facility management, and logistics
 
 ## Clean URL Routing System
 
-This website has been configured with clean URLs that remove the `.html` extensions. Users can now access pages using clean URLs like:
+This website uses a simple folder-based structure for clean URLs. Each page has its own folder with an `index.html` file, making routing straightforward and eliminating the need for complex URL rewriting.
+
+**Clean URLs:**
 - `/` (Home)
-- `/about`
-- `/services`
-- `/contact`
+- `/about/`
+- `/services/`
+- `/contact/`
 
-## Simple Apache Setup
+## Simple Folder Structure
 
-The `.htaccess` file provides simple URL rewriting without any additional servers or dependencies.
-
-**Requirements:**
-- Apache server with mod_rewrite enabled
-- Place all files in your web root directory
-
-**Features:**
-- ✅ Clean URLs without .html extensions
-- ✅ Automatic redirects from .html URLs to clean URLs
-- ✅ Custom 404 error page
-- ✅ Security headers
-- ✅ Gzip compression
-- ✅ Browser caching
-
-## File Structure
+The website uses a clean folder-based approach where each page has its own directory:
 
 ```
 gyanelle_llc/
-├── index.html          # Homepage
-├── about.html          # About page
-├── services.html       # Services page
-├── contact.html        # Contact page
-├── 404.html           # Error page
-├── .htaccess          # Apache URL rewriting
-├── css/               # Stylesheets
-├── js/                # JavaScript files
-├── img/               # Images
-└── lib/               # Third-party libraries
+├── index.html              # Homepage
+├── about/
+│   └── index.html          # About page
+├── services/
+│   └── index.html          # Services page
+├── contact/
+│   └── index.html          # Contact page
+├── 404.html               # Error page
+├── .htaccess              # Apache configuration
+├── css/                   # Stylesheets
+├── js/                    # JavaScript files
+├── img/                   # Images
+└── lib/                   # Third-party libraries
 ```
 
 ## URL Mapping
 
-| Clean URL | File | Description |
-|-----------|------|-------------|
+| Clean URL | Folder/File | Description |
+|-----------|-------------|-------------|
 | `/` | `index.html` | Homepage |
-| `/about` | `about.html` | About Us page |
-| `/services` | `services.html` | Services page |
-| `/contact` | `contact.html` | Contact page |
+| `/about/` | `about/index.html` | About Us page |
+| `/services/` | `services/index.html` | Services page |
+| `/contact/` | `contact/index.html` | Contact page |
 | Any other URL | `404.html` | 404 Error page |
 
 ## Features
 
 - **Clean URLs**: No .html extensions in the browser address bar
+- **Simple Structure**: Each page has its own folder
 - **SEO Friendly**: Better for search engine optimization
 - **User Friendly**: Easier to remember and share URLs
 - **Professional**: More professional appearance
-- **Consistent**: All internal links updated to use clean URLs
-- **Simple**: No additional servers or dependencies required
+- **No Complex Routing**: Uses standard web server folder structure
+
+## How It Works
+
+1. **User visits** `/about/` 
+2. **Web server automatically** serves `about/index.html`
+3. **User visits** `/services/` 
+4. **Web server automatically** serves `services/index.html`
+5. **Any invalid URL** shows the custom 404 page
 
 ## Deployment
 
 ### Apache Hosting
 1. Upload all files to your web server
-2. Ensure mod_rewrite is enabled
-3. The `.htaccess` file will handle URL rewriting automatically
+2. The `.htaccess` file handles any additional routing needs
+3. Works immediately with standard web hosting
 
 ### Static Hosting (Netlify, Vercel, etc.)
 1. Upload all files to your static hosting provider
-2. Configure redirects in your hosting provider's settings:
-   - `/about` → `/about.html`
-   - `/services` → `/services.html`
-   - `/contact` → `/contact.html`
-   - `/*` → `/404.html` (for 404 errors)
+2. The folder structure works natively
+3. No additional configuration needed
 
-## How It Works
+### Any Web Server
+- Works with Apache, Nginx, IIS, or any web server
+- Standard folder structure is universally supported
+- No special server requirements
 
-The `.htaccess` file uses Apache's mod_rewrite to:
-1. **Remove .html extensions** from URLs automatically
-2. **Redirect old URLs** to clean URLs (301 redirects)
-3. **Handle 404 errors** with your custom error page
-4. **Optimize performance** with compression and caching
+## Benefits of Folder Structure
+
+- ✅ **Universal Compatibility** - Works on any web server
+- ✅ **Simple Maintenance** - Easy to understand and modify
+- ✅ **No Dependencies** - No special modules or configurations needed
+- ✅ **Scalable** - Easy to add new pages by creating new folders
+- ✅ **Professional URLs** - Clean, SEO-friendly URLs
+- ✅ **Standard Practice** - Follows web development best practices
 
 ## Contact
 
