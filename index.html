@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Gyanelle LLC - Expert electrical consulting, cleaning, and logistics solutions serving Columbus, Ohio">
+    <meta name="description" content="Gyanelle LLC - Expert electrical consulting, cleaning, and logistics solutions serving Westerville, Ohio">
     <meta name="author" content="Gyanelle LLC">
-    <meta name="keywords" content="electrical consulting, cleaning services, logistics solutions, Columbus Ohio, Westerville, professional services">
+    <meta name="keywords" content="electrical consulting, cleaning services, logistics solutions, Westerville Ohio, Westerville, professional services">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gyanelle.vercel.app/">
     <meta property="og:title" content="Gyanelle LLC - Smart. Professional. Reliable.">
-    <meta property="og:description" content="Expert electrical consulting, cleaning, and logistics solutions serving Columbus, Ohio and beyond. We deliver excellence in every project, every time.">
+    <meta property="og:description" content="Expert electrical consulting, cleaning, and logistics solutions serving Westerville, Ohio and beyond. We deliver excellence in every project, every time.">
     <meta property="og:image" content="https://gyanelle.vercel.app/assets/images/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -33,11 +33,93 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://gyanelle.vercel.app/">
     <meta property="twitter:title" content="Gyanelle LLC - Smart. Professional. Reliable.">
-    <meta property="twitter:description" content="Expert electrical consulting, cleaning, and logistics solutions serving Columbus, Ohio and beyond. We deliver excellence in every project, every time.">
+    <meta property="twitter:description" content="Expert electrical consulting, cleaning, and logistics solutions serving Westerville, Ohio and beyond. We deliver excellence in every project, every time.">
     <meta property="twitter:image" content="https://gyanelle.vercel.app/assets/images/og-image.png">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://gyanelle.vercel.app/">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="vendor/bootstrap/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="assets/images/logo.png" as="image">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Gyanelle LLC",
+        "description": "Expert electrical consulting, cleaning, and logistics solutions serving Westerville, Ohio",
+        "url": "https://gyanelle.vercel.app",
+        "logo": "https://gyanelle.vercel.app/assets/images/logo.png",
+        "image": "https://gyanelle.vercel.app/assets/images/og-image.png",
+        "telephone": "+1-614-779-8886",
+        "email": "info@gyanelle.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Westerville",
+            "addressLocality": "Westerville",
+            "addressRegion": "OH",
+            "postalCode": "43081",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "40.1262",
+            "longitude": "-82.9291"
+        },
+        "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-16:00",
+        "priceRange": "$$",
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.1262",
+                "longitude": "-82.9291"
+            },
+            "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Professional Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Electrical Consulting",
+                        "description": "Expert electrical system design, safety audits, and compliance consulting"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Professional Cleaning",
+                        "description": "Comprehensive cleaning services for commercial spaces"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Logistics Solutions",
+                        "description": "Streamlined logistics and supply chain management"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -50,11 +132,14 @@
 </head>
 
 <body>
+    <!-- Loading State -->
+    <div class="loading-state"></div>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
-                <img src="assets/images/logo.png" alt="Gyanelle LLC Logo" class="brand-logo" loading="lazy">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="/">
+                <img src="assets/images/logo.png" alt="Gyanelle LLC Logo" class="brand-logo critical-image">
                 <div class="brand-text">
                     <span class="brand-name">Gyanelle</span>
                     <span class="brand-subtitle">LLC</span>
@@ -70,19 +155,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center gap-2">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link active" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about/">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                        <a class="nav-link" href="services/">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact/">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary cta-button ms-2" href="contact.html">Get Quote</a>
+                        <a class="btn btn-primary cta-button ms-2" href="contact/">Get Quote</a>
                     </li>
                 </ul>
             </div>
@@ -105,7 +190,7 @@
             </h1>
             
             <p class="hero-subtitle">
-                Expert electrical consulting, cleaning, and logistics solutions serving Columbus, Ohio and beyond. We deliver excellence in every project, every time.
+                Expert electrical consulting, cleaning, and logistics solutions serving Westerville, Ohio and beyond. We deliver excellence in every project, every time.
             </p>
             
             <div class="hero-stats">
@@ -126,11 +211,11 @@
             </div>
             
             <div class="hero-actions">
-                <a href="services.html" class="btn btn-primary btn-lg hero-btn">
+                <a href="services/" class="btn btn-primary btn-lg hero-btn">
                     <span>Explore Services</span>
                     <i class="fas fa-arrow-right ms-2"></i>
                 </a>
-                <a href="contact.html" class="btn btn-outline-light btn-lg hero-btn">
+                <a href="contact/" class="btn btn-outline-light btn-lg hero-btn">
                     <span>Request Quote</span>
                 </a>
             </div>
@@ -142,7 +227,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-header text-center">
+                    <div class="section-header text-center animate-on-scroll">
                         <span class="section-eyebrow">Our Expertise</span>
                         <h2 class="section-title">Comprehensive Solutions for Every Need</h2>
                         <p class="section-description">
@@ -152,9 +237,9 @@
                 </div>
             </div>
             
-            <div class="row g-4 mt-3">
+            <div class="row g-4 mt-3 stagger-animation">
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
+                    <div class="service-card stagger-item">
                         <div class="service-card-image">
                             <img src="assets/images/electrical-service.jpg" alt="Electrical Consulting" loading="lazy">
                             <div class="service-card-header">
@@ -166,7 +251,7 @@
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-title">Electrical Consulting</h3>
-                            <p class="service-description">
+                            <p class="service-description mb-4">
                                 Expert electrical system design, safety audits, and compliance consulting for commercial and residential projects.
                             </p>
                             <ul class="service-features">
@@ -186,7 +271,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
+                    <div class="service-card stagger-item">
                         <div class="service-card-image">
                             <img src="assets/images/cleaning-service.jpg" alt="Professional Cleaning" loading="lazy">
                             <div class="service-card-header">
@@ -198,7 +283,7 @@
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-title">Professional Cleaning</h3>
-                            <p class="service-description">
+                            <p class="service-description mb-4">
                                 Comprehensive cleaning services for commercial spaces, ensuring pristine environments that reflect your brand excellence.
                             </p>
                             <ul class="service-features">
@@ -218,7 +303,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
+                    <div class="service-card stagger-item">
                         <div class="service-card-image">
                             <img src="assets/images/logistics-service.jpg" alt="Logistics Solutions" loading="lazy">
                             <div class="service-card-header">
@@ -230,7 +315,7 @@
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-title">Logistics Solutions</h3>
-                            <p class="service-description">
+                            <p class="service-description mb-4">
                                 Streamlined logistics and supply chain management to optimize your operations and reduce costs.
                             </p>
                             <ul class="service-features">
@@ -257,20 +342,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-4 sm:mb-0">
-                    <span class="section-eyebrow">Why Choose Gyanelle LLC</span>
-                    <h2 class="section-title">Built on Trust, Driven by Excellence</h2>
-                    <p class="section-description">
-                        We don't just provide services — we build lasting partnerships. Our commitment to quality, reliability, and customer satisfaction sets us apart in every project we undertake.
-                    </p>
+                    <div class="animate-on-scroll">
+                        <span class="section-eyebrow">Why Choose Gyanelle LLC</span>
+                        <h2 class="section-title">Built on Trust, Driven by Excellence</h2>
+                        <p class="section-description">
+                            We don't just provide services — we build lasting partnerships. Our commitment to quality, reliability, and customer satisfaction sets us apart in every project we undertake.
+                        </p>
+                    </div>
                 </div>
             </div>
             
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="why-content">
-                        <div class="row g-4">
+                    <div class="why-content animate-on-scroll">
+                        <div class="row g-4 stagger-animation">
                             <div class="col-md-6">
-                                <div class="feature-item">
+                                <div class="feature-item stagger-item">
                                     <div class="feature-icon">
                                         <i class="fas fa-shield-alt"></i>
                                     </div>
@@ -282,7 +369,7 @@
                             </div>
                             
                             <div class="col-md-6">
-                                <div class="feature-item">
+                                <div class="feature-item stagger-item">
                                     <div class="feature-icon">
                                         <i class="fas fa-clock"></i>
                                     </div>
@@ -294,19 +381,19 @@
                             </div>
                             
                             <div class="col-md-6">
-                                <div class="feature-item">
+                                <div class="feature-item stagger-item">
                                     <div class="feature-icon">
                                         <i class="fas fa-award"></i>
                                     </div>
                                     <div class="feature-content">
                                         <h4>5+ Years Experience</h4>
-                                        <p>Decades of combined experience serving Columbus and surrounding areas.</p>
+                                        <p>Decades of combined experience serving Westerville and surrounding areas.</p>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="col-md-6">
-                                <div class="feature-item">
+                                <div class="feature-item stagger-item">
                                     <div class="feature-icon">
                                         <i class="fas fa-users"></i>
                                     </div>
@@ -319,7 +406,7 @@
                         </div>
                         
                         <div class="text-center mt-5">
-                            <a href="about.html" class="btn btn-outline-primary btn-lg">
+                            <a href="about/" class="btn btn-outline-primary btn-lg hover-effect">
                                 <span>Learn More About Us</span>
                                 <i class="fas fa-arrow-right ms-2"></i>
                             </a>
@@ -346,9 +433,9 @@
     <section class="stats-section">
         <div class="container">
             <div class="stats-container">
-                <div class="row g-4">
+                <div class="row g-4 stagger-animation">
                     <div class="col-lg-3 col-md-6">
-                        <div class="stat-card">
+                        <div class="stat-card stagger-item">
                             <div class="stat-icon">
                                 <i class="fas fa-users"></i>
                             </div>
@@ -360,7 +447,7 @@
                     </div>
                     
                     <div class="col-lg-3 col-md-6">
-                        <div class="stat-card">
+                        <div class="stat-card stagger-item">
                             <div class="stat-icon">
                                 <i class="fas fa-project-diagram"></i>
                             </div>
@@ -372,7 +459,7 @@
                     </div>
                     
                     <div class="col-lg-3 col-md-6">
-                        <div class="stat-card">
+                        <div class="stat-card stagger-item">
                             <div class="stat-icon">
                                 <i class="fas fa-star"></i>
                             </div>
@@ -384,7 +471,7 @@
                     </div>
                     
                     <div class="col-lg-3 col-md-6">
-                        <div class="stat-card">
+                        <div class="stat-card stagger-item">
                             <div class="stat-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
@@ -402,7 +489,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content text-center">
+            <div class="cta-content text-center animate-on-scroll">
                 <div class="cta-badge">
                     <i class="fas fa-star"></i>
                     <span>Get Started Today</span>
@@ -412,11 +499,11 @@
                     Join our growing family of satisfied clients and discover why we're Ohio's trusted partner for electrical consulting, cleaning, and logistics solutions.
                 </p>
                 <div class="cta-actions">
-                    <a href="contact.html" class="btn btn-primary btn-lg cta-btn">
+                    <a href="contact/" class="btn btn-primary btn-lg cta-btn hover-effect">
                         <span>Start Your Project</span>
                         <i class="fas fa-arrow-right ms-2"></i>
                     </a>
-                    <a href="services.html" class="btn btn-outline-light btn-lg cta-btn">
+                    <a href="services/" class="btn btn-outline-light btn-lg cta-btn hover-effect">
                         <i class="fas fa-tools me-2"></i>
                         <span>View Services</span>
                     </a>
@@ -432,14 +519,14 @@
                 <div class="col-lg-4">
                     <div class="footer-brand">
                         <div class="d-flex align-items-center gap-3 mb-3">
-                            <img src="assets/images/logo.png" alt="Gyanelle LLC Logo" class="brand-logo" loading="lazy">
+                            <img src="assets/images/logo.png" alt="Gyanelle LLC Logo" class="brand-logo critical-image">
                             <div class="brand-text">
                                 <span class="brand-name">Gyanelle</span>
                                 <span class="brand-subtitle">LLC</span>
                             </div>
                         </div>
                         <p class="footer-description">
-                            Professional electrical consulting, cleaning, and logistics services serving Columbus, Ohio and beyond.
+                            Professional electrical consulting, cleaning, and logistics services serving Westerville, Ohio and beyond.
                         </p>
                         <div class="footer-contact">
                             <p><i class="fas fa-phone"></i> +1 (614) 779-8886</p>
@@ -452,18 +539,18 @@
                 <div class="col-lg-2 col-md-6">
                     <h5 class="footer-title">Services</h5>
                     <ul class="footer-links">
-                        <li><a href="services.html#electrical-consulting">Electrical Consulting</a></li>
-                        <li><a href="services.html#cleaning-services">Cleaning Services</a></li>
-                        <li><a href="services.html#logistics-services">Logistics Solutions</a></li>
+                        <li><a href="services/#electrical-consulting">Electrical Consulting</a></li>
+                        <li><a href="services/#cleaning-services">Cleaning Services</a></li>
+                        <li><a href="services/#logistics-services">Logistics Solutions</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
                     <h5 class="footer-title">Company</h5>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="contact.html">Get Quote</a></li>
+                        <li><a href="about/">About Us</a></li>
+                        <li><a href="contact/">Contact</a></li>
+                        <li><a href="contact/">Get Quote</a></li>
                     </ul>
                 </div>
                 
@@ -511,75 +598,6 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/custom.js"></script>
     
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.premium-navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Optimized image loading
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.optimized-image');
-            
-            images.forEach(img => {
-                if (img.complete) {
-                    img.classList.add('loaded');
-                } else {
-                    img.addEventListener('load', function() {
-                        this.classList.add('loaded');
-                    });
-                    
-                    img.addEventListener('error', function() {
-                        this.style.display = 'none';
-                        this.parentElement.style.background = 'linear-gradient(135deg, #f1f5f9, #e2e8f0)';
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for lazy loading
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('.optimized-image[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // Hero static background effect
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const heroBackground = document.querySelector('.hero-static-background');
-            
-            if (heroBackground) {
-                // Subtle parallax effect for the background
-                const rate = scrolled * -0.5;
-                heroBackground.style.transform = `translateY(${rate}px)`;
-            }
-        });
-    </script>
 </body>
 </html>
