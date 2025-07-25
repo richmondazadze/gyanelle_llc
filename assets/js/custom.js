@@ -70,10 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Only update if scroll position changed significantly
             if (Math.abs(currentScrollY - lastScrollY) > 5) {
                 if (currentScrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
+                navbar.classList.add('scrolled');
+	  } else {
+                navbar.classList.remove('scrolled');
+            }
                 lastScrollY = currentScrollY;
             }
             ticking = false;
@@ -92,20 +92,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const links = document.querySelectorAll('a[href^="#"]');
         
         links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
                     const navbarHeight = navbar && navbar.offsetHeight ? navbar.offsetHeight : 80;
                     const targetPosition = targetElement.offsetTop - navbarHeight;
                     
                     // Use ultra-smooth scrolling with custom easing
                     smoothScrollTo(targetPosition, 1000, 'easeOutQuart');
-                }
-            });
+            }
         });
+    });
     }
 
     // Advanced smooth scroll function with multiple easing options
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Optimized image loading with smooth animations
     function initLazyLoading() {
-        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
         
         // Preload critical images immediately
         const criticalImages = document.querySelectorAll('img[data-critical="true"]');
@@ -158,10 +158,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
                     
                     // Load image if it has data-src
                     if (img.dataset.src) {
@@ -183,28 +183,28 @@ document.addEventListener('DOMContentLoaded', function() {
                         };
                     } else {
                         // Image already loaded, just add the class
-                        img.style.opacity = '1';
+                img.style.opacity = '1';
                         img.style.transform = 'scale(1)';
                     }
                     
                     img.classList.add('fade-in');
-                    imageObserver.unobserve(img);
-                }
-            });
+                imageObserver.unobserve(img);
+            }
+        });
         }, {
             rootMargin: '50px 0px',
             threshold: 0.1
-        });
+    });
 
-        lazyImages.forEach(img => {
+    lazyImages.forEach(img => {
             // Only add lazy-image class if image isn't already loaded
             if (!img.complete || img.naturalWidth === 0) {
                 img.classList.add('lazy-image');
             } else {
                 img.classList.add('fade-in');
             }
-            imageObserver.observe(img);
-        });
+        imageObserver.observe(img);
+    });
     }
 
     // Enhanced scroll-triggered animations with performance optimization
@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (isMenuOpen) {
                     closeMobileMenu();
-                } else {
+	        } else {
                     openMobileMenu();
                 }
             });
@@ -470,6 +470,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Modern mobile dropdown fix
+    function initModernDropdown() {
+        const isMobile = () => window.innerWidth < 992;
+        document.querySelectorAll('.nav-item.dropdown').forEach(function(dropdown) {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (toggle && menu) {
+                // Remove default Bootstrap dropdown on mobile
+                toggle.addEventListener('click', function(e) {
+                    if (isMobile()) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Close other open dropdowns
+                        document.querySelectorAll('.nav-item.dropdown .dropdown-menu.show').forEach(function(openMenu) {
+                            if (openMenu !== menu) openMenu.classList.remove('show');
+                        });
+                        menu.classList.toggle('show');
+                    }
+                });
+                // Close dropdown on outside click (mobile)
+                document.addEventListener('click', function(e) {
+                    if (isMobile() && !dropdown.contains(e.target)) {
+                        menu.classList.remove('show');
+                    }
+                });
+                // Close dropdown when any nav-link or cta-button is tapped (mobile)
+                document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .cta-button').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (isMobile()) {
+                            menu.classList.remove('show');
+                        }
+                    });
+                });
+                // Close dropdown when mobile menu closes
+                const mobileMenu = document.querySelector('.navbar-collapse');
+                if (mobileMenu) {
+                    mobileMenu.addEventListener('hide.bs.collapse', function() {
+                        menu.classList.remove('show');
+                    });
+                }
+            }
+        });
+    }
+
+    // Smooth dropdown animation for Services tab
+    document.querySelectorAll('.nav-item.dropdown').forEach(function(dropdown) {
+        var dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        var dropdownMenu = dropdown.querySelector('.animate-dropdown');
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('show.bs.dropdown', function () {
+                dropdownMenu.classList.add('show');
+            });
+            dropdownToggle.addEventListener('hide.bs.dropdown', function () {
+                dropdownMenu.classList.remove('show');
+            });
+        }
+    });
+
     // Initialize all functions
     function init() {
         try {
@@ -481,6 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
             initParallaxEffects();
             initHoverEffects();
             initPerformanceOptimizations();
+            initModernDropdown();
         } catch (error) {
             console.warn('Some features failed to initialize:', error);
         }
@@ -500,25 +559,68 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.warn('Image visibility check failed:', error);
             }
         }, 100);
-        
-        // Initialize mobile menu with retry mechanism
-        let menuInitialized = false;
-        let retryCount = 0;
-        const maxRetries = 3;
 
-        function tryInitializeMenu() {
-            if (!menuInitialized && retryCount < maxRetries) {
-                menuInitialized = initializeMobileMenu();
-                if (!menuInitialized) {
-                    retryCount++;
-                    setTimeout(tryInitializeMenu, 100);
-                }
+    // Initialize mobile menu with retry mechanism
+    let menuInitialized = false;
+    let retryCount = 0;
+    const maxRetries = 3;
+
+    function tryInitializeMenu() {
+        if (!menuInitialized && retryCount < maxRetries) {
+            menuInitialized = initializeMobileMenu();
+            if (!menuInitialized) {
+                retryCount++;
+                setTimeout(tryInitializeMenu, 100);
             }
         }
-
-        tryInitializeMenu();
-        setTimeout(tryInitializeMenu, 50);
     }
+
+    tryInitializeMenu();
+    setTimeout(tryInitializeMenu, 50);
+    }
+
+    // Utility to switch Services nav between dropdown (desktop) and direct link (mobile)
+    function adaptServicesNavDropdown() {
+        const navs = document.querySelectorAll('.navbar-nav');
+        navs.forEach(nav => {
+            const dropdown = nav.querySelector('.nav-item.dropdown');
+            if (!dropdown) return;
+            const isMobile = window.innerWidth < 992;
+            if (isMobile && dropdown.classList.contains('dropdown')) {
+                // Replace dropdown with direct link
+                const directLink = document.createElement('li');
+                directLink.className = 'nav-item';
+                directLink.innerHTML = `<a class="nav-link" href="../services/">Services</a>`;
+                nav.replaceChild(directLink, dropdown);
+            } else if (!isMobile && !nav.querySelector('.nav-item.dropdown')) {
+                // Restore dropdown if missing
+                const dropdownLi = document.createElement('li');
+                dropdownLi.className = 'nav-item dropdown';
+                dropdownLi.innerHTML = `
+                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end animate-dropdown" aria-labelledby="servicesDropdown">
+                        <li><a class="dropdown-item" href="../services/">All Services Overview</a></li>
+                        <li><a class="dropdown-item" href="../services/electrical.html">Electrical Services</a></li>
+                        <li><a class="dropdown-item" href="../services/cleaning.html">Cleaning Services</a></li>
+                        <li><a class="dropdown-item" href="../services/logistics.html">Logistics Solutions</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                    </ul>
+                `;
+                // Insert before Contact nav item if possible
+                const contactNav = nav.querySelector('a[href*="contact"]')?.closest('li');
+                if (contactNav) {
+                    nav.insertBefore(dropdownLi, contactNav);
+                } else {
+                    nav.appendChild(dropdownLi);
+                }
+            }
+        });
+    }
+
+    window.addEventListener('resize', adaptServicesNavDropdown);
+    adaptServicesNavDropdown();
 
     // Initialize everything
     init();

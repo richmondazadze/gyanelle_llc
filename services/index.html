@@ -75,8 +75,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../about/">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="./">Services</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end animate-dropdown" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="./">All Services Overview</a></li>
+                            <li><a class="dropdown-item" href="electrical.html">Electrical Services</a></li>
+                            <li><a class="dropdown-item" href="cleaning.html">Cleaning Services</a></li>
+                            <li><a class="dropdown-item" href="logistics.html">Logistics Solutions</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../contact/">Contact</a>
@@ -134,128 +143,76 @@
     <!-- Detailed Services -->
     <section class="about-section">
         <div class="container">
-            <!-- Electrical Consulting Details -->
-            <div class="row align-items-center mb-5" id="electrical-consulting">
-                <div class="col-lg-6">
+            <!-- Electrical Service -->
+            <div class="row align-items-center mb-5 animate-on-scroll" id="electrical-consulting">
+                <div class="col-lg-6 d-flex flex-column align-items-center">
                     <div class="visual-card">
-                        <img src="../assets/images/service-details-01.jpg" alt="Electrical Consulting" class="img-fluid" loading="lazy">
+                        <img src="../assets/images/service-details-01.jpg" alt="Electrical Services" class="img-fluid" loading="lazy">
                     </div>
+                    <a href="electrical.html" class="btn btn-primary mt-3 animate-on-scroll">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
                 <div class="col-lg-6">
                     <div class="ps-lg-5">
                         <span class="section-eyebrow">Service Details</span>
-                        <h2 class="section-title">Electrical Consulting</h2>
+                        <h2 class="section-title">Electrical Services</h2>
                         <p class="section-description mb-4">
-                            Our electrical consulting services provide comprehensive solutions for both residential and commercial projects. We ensure safety, efficiency, and compliance with all electrical codes and standards.
+                            From generator installation to HV cable and H-string termination, Gyanelle LLC delivers expert electrical solutions for homes, businesses, and industrial projects. Our team specializes in domestic and commercial wiring, transformer installation, field works, and skilled labor hiring—ensuring safety, reliability, and compliance at every step.
                         </p>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="feature-icon" style="width: 40px; height: 40px; font-size: 1rem;">
-                                        <i class="fas fa-shield-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Safety First</h6>
-                                        <p class="small text-muted mb-0">Comprehensive safety audits</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="feature-icon" style="width: 40px; height: 40px; font-size: 1rem;">
-                                        <i class="fas fa-leaf"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Energy Efficient</h6>
-                                        <p class="small text-muted mb-0">Optimize power consumption</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="service-features mb-4">
+                            <li><i class="fas fa-bolt"></i> Generator Installation</li>
+                            <li><i class="fas fa-broadcast-tower"></i> HV Cable & H-String Termination</li>
+                            <li><i class="fas fa-home"></i> Domestic & Commercial Wiring</li>
+                            <li><i class="fas fa-charging-station"></i> Transformer Installation & Field Works</li>
+                            <li><i class="fas fa-users-cog"></i> Skilled Labor Hiring</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-
-            <!-- Cleaning Services Details -->
-            <div class="row align-items-center mb-5" id="cleaning-services">
-                <div class="col-lg-6 order-lg-2">
+            <!-- Cleaning Service -->
+            <div class="row align-items-center mb-5 animate-on-scroll" id="cleaning-services">
+                <div class="col-lg-6 order-lg-2 d-flex flex-column align-items-center">
                     <div class="visual-card">
                         <img src="../assets/images/service-details-02.jpg" alt="Cleaning Services" class="img-fluid" loading="lazy">
                     </div>
+                    <a href="cleaning.html" class="btn btn-primary mt-3 animate-on-scroll">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="pe-lg-5">
                         <span class="section-eyebrow">Service Details</span>
                         <h2 class="section-title">Cleaning Services</h2>
                         <p class="section-description mb-4">
-                            Professional cleaning services tailored to your specific needs. From routine maintenance to deep cleaning, we ensure your space is spotless and welcoming.
+                            Experience a new standard of clean with our professional, eco-friendly cleaning services. We offer flexible scheduling for homes and offices, deep cleaning for move-in/move-out, and use only safe products for your family and pets. No industry cleaning—just tailored, pristine results for your space.
                         </p>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="feature-icon" style="width: 40px; height: 40px; font-size: 1rem;">
-                                        <i class="fas fa-spray-can"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Eco-Friendly</h6>
-                                        <p class="small text-muted mb-0">Safe cleaning products</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="feature-icon" style="width: 40px; height: 40px; font-size: 1rem;">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Flexible Scheduling</h6>
-                                        <p class="small text-muted mb-0">Work around your schedule</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="service-features mb-4">
+                            <li><i class="fas fa-leaf"></i> Eco-Friendly Home Cleaning</li>
+                            <li><i class="fas fa-briefcase"></i> Flexible Office Cleaning</li>
+                            <li><i class="fas fa-broom"></i> Deep Cleaning & Move-In/Out</li>
+                            <li><i class="fas fa-shield-alt"></i> Safe Products for Family & Pets</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-
-            <!-- Logistics Services Details -->
-            <div class="row align-items-center" id="logistics-services">
-                <div class="col-lg-6">
+            <!-- Logistics Service -->
+            <div class="row align-items-center animate-on-scroll" id="logistics-services">
+                <div class="col-lg-6 d-flex flex-column align-items-center">
                     <div class="visual-card">
                         <img src="../assets/images/service-details-03.jpg" alt="Logistics Services" class="img-fluid" loading="lazy">
                     </div>
+                    <a href="logistics.html" class="btn btn-primary mt-3 animate-on-scroll">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
                 <div class="col-lg-6">
                     <div class="ps-lg-5">
                         <span class="section-eyebrow">Service Details</span>
-                        <h2 class="section-title">Logistics Services</h2>
+                        <h2 class="section-title">Logistics Solutions</h2>
                         <p class="section-description mb-4">
-                            Complete logistics solutions for stress-free moves. Our experienced team handles everything from packing to delivery, ensuring your belongings arrive safely and on time.
+                            Gyanelle LLC provides top-tier logistics for the supply of mining and electrical materials, as well as secure movement of goods from homes or offices to any destination. Benefit from route optimization, real-time tracking, secure storage, and fully insured transport for total peace of mind.
                         </p>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="feature-icon" style="width: 40px; height: 40px; font-size: 1rem;">
-                                        <i class="fas fa-box"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Professional Packing</h6>
-                                        <p class="small text-muted mb-0">Careful item protection</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="feature-icon" style="width: 40px; height: 40px; font-size: 1rem;">
-                                        <i class="fas fa-truck"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Safe Transport</h6>
-                                        <p class="small text-muted mb-0">Insured delivery service</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="service-features mb-4">
+                            <li><i class="fas fa-box"></i> Supply of Mining & Electrical Materials</li>
+                            <li><i class="fas fa-truck"></i> Home & Office Goods Movement</li>
+                            <li><i class="fas fa-route"></i> Route Optimization & Tracking</li>
+                            <li><i class="fas fa-warehouse"></i> Secure Storage & Insured Transport</li>
+                        </ul>
                     </div>
                 </div>
             </div>
