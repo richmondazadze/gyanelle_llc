@@ -7,21 +7,39 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://gyanelle.vercel.app/about.html</loc>
+        <loc>https://gyanelle.vercel.app/about/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://gyanelle.vercel.app/services.html</loc>
+        <loc>https://gyanelle.vercel.app/services/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://gyanelle.vercel.app/contact.html</loc>
+        <loc>https://gyanelle.vercel.app/contact/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://gyanelle.vercel.app/services/electrical.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://gyanelle.vercel.app/services/cleaning.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://gyanelle.vercel.app/services/logistics.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset> 

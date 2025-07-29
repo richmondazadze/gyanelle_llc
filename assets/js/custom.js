@@ -569,7 +569,7 @@ function initHeroSlideshow() {
     if (heroSlideshow) {
         heroSlideshow.addEventListener('mouseenter', stopSlideshow);
         heroSlideshow.addEventListener('mouseleave', startSlideshow);
-        }
+    }
         
     // Start the slideshow
     startSlideshow();
