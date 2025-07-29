@@ -207,21 +207,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     }
 
-    // Enhanced scroll-triggered animations with performance optimization
+    // Fast & Simple scroll-triggered animations
     function initScrollAnimations() {
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const animatedElements = document.querySelectorAll('.animate-on-scroll, .visual-card, .service-features');
         
         const animationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const element = entry.target;
                     
-                    // Add entrance effect with staggered delay
-                    const delay = element.dataset.delay || 0;
-                    setTimeout(() => {
-                        element.classList.add('animated');
-                        element.style.animationDelay = '0.1s';
-                    }, delay);
+                    // Immediate animation without delays
+                    element.classList.add('animated');
+                    
+                    // Trigger child animations for service features immediately
+                    if (element.classList.contains('service-features')) {
+                        const listItems = element.querySelectorAll('li');
+                        listItems.forEach((item) => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateX(0)';
+                        });
+                    }
                     
                     // Unobserve after animation to improve performance
                     animationObserver.unobserve(element);
@@ -246,9 +251,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Set initial state for ultra-smooth entrance
             items.forEach(item => {
-                item.style.transform = 'translateY(60px) scale(0.9)';
+                item.style.transform = 'translateY(40px) scale(0.95)';
                 item.style.opacity = '0';
-                item.style.transition = 'all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                item.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
             });
             
             const containerObserver = new IntersectionObserver((entries) => {
@@ -256,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (entry.isIntersecting) {
                         items.forEach((item, index) => {
                             // Enhanced stagger timing for premium feel
-                            const delay = index * 150; // Optimized delay
+                            const delay = index * 120; // Optimized delay for uniform feel
                             setTimeout(() => {
                                 item.classList.add('staggered-in');
                                 item.style.transform = 'translateY(0) scale(1)';
@@ -510,9 +515,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         menu.classList.remove('show');
                     });
                 }
-            }
-        });
-    }
+	        }
+	    });
+	}
 
     // Smooth dropdown animation for Services tab
     document.querySelectorAll('.nav-item.dropdown').forEach(function(dropdown) {
@@ -528,6 +533,57 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Hero Slideshow Functionality
+function initHeroSlideshow() {
+    const slides = document.querySelectorAll('.hero-slideshow .slide');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        // Remove active class from all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Add active class to current slide
+        slides[index].classList.add('active');
+        
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+    }
+
+    function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    }
+
+    function stopSlideshow() {
+        if (slideInterval) {
+            clearInterval(slideInterval);
+        }
+    }
+
+    // Pause slideshow on hover (optional)
+    const heroSlideshow = document.querySelector('.hero-slideshow');
+    if (heroSlideshow) {
+        heroSlideshow.addEventListener('mouseenter', stopSlideshow);
+        heroSlideshow.addEventListener('mouseleave', startSlideshow);
+        }
+        
+    // Start the slideshow
+    startSlideshow();
+
+    // Pause slideshow when user is not viewing the page
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopSlideshow();
+        } else {
+            startSlideshow();
+        }
+    });
+}
+
     // Initialize all functions
     function init() {
         try {
@@ -540,6 +596,7 @@ document.addEventListener('DOMContentLoaded', function() {
             initHoverEffects();
             initPerformanceOptimizations();
             initModernDropdown();
+            initHeroSlideshow(); // Initialize the new slideshow function
         } catch (error) {
             console.warn('Some features failed to initialize:', error);
         }
