@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const element = entry.target;
                     
                     // Immediate animation without delays
-                    element.classList.add('animated');
+                        element.classList.add('animated');
                     
                     // Trigger child animations for service features immediately
                     if (element.classList.contains('service-features')) {
@@ -569,7 +569,7 @@ function initHeroSlideshow() {
     if (heroSlideshow) {
         heroSlideshow.addEventListener('mouseenter', stopSlideshow);
         heroSlideshow.addEventListener('mouseleave', startSlideshow);
-    }
+        }
         
     // Start the slideshow
     startSlideshow();
