@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build files
+.next/
+out/
+
+# Debug logs
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+coverage/
+
+# Misc
+.DS_Store
+*.pem
+
+# Local development
+.vercel/
+
+# Build output
+dist/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional
+cypress/
+
+# Vercel
+.vercel_build_output/
+.vercel_output/
