@@ -1,0 +1,100 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "sans-serif",
+      "count": 149
+    },
+    {
+      "family": "halcom",
+      "count": 90
+    },
+    {
+      "family": "Helvetica Neue",
+      "count": 90
+    },
+    {
+      "family": "Helvetica",
+      "count": 90
+    },
+    {
+      "family": "Arial",
+      "count": 90
+    },
+    {
+      "family": "Halcom",
+      "count": 59
+    }
+  ],
+  "colors": {
+    "primary": "#5BA4AE",
+    "accent": "#002F49",
+    "background": "#FFFFFF",
+    "textPrimary": "#002F49",
+    "link": "#002F49"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Halcom",
+      "heading": "halcom"
+    },
+    "fontStacks": {
+      "body": [
+        "Halcom",
+        "sans-serif"
+      ],
+      "heading": [
+        "halcom",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Halcom",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "96px",
+      "h2": "48px",
+      "body": "20px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "2px"
+  },
+  "components": {},
+  "images": {
+    "logo": "File saved at: attached_assets/logo.svg",
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": "File saved at: attached_assets/ogImage.png"
+  },
+  "__framework_hints": [
+    "Site Kit by Google 1.168.0"
+  ],
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Strong indicators: header logo linking to homepage, header location, visible, top-left position, src contains logo, class contains logo, reasonable size. Score: 110 (clear winner by 35 points)",
+    "confidence": 0.9
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "secondary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "confidence": 0
+  },
+  "confidence": {
+    "buttons": 0,
+    "colors": 0,
+    "overall": 0
+  }
+}
